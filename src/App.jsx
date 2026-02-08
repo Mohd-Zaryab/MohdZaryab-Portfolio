@@ -6,6 +6,7 @@ import Background from './components/Background';
 const Hero = lazy(() => import('./components/Hero'));
 const Stats = lazy(() => import('./components/Stats'));
 const Timeline = lazy(() => import('./components/Timeline'));
+const Education = lazy(() => import('./components/Education'));
 const Projects = lazy(() => import('./components/Projects'));
 const Skills = lazy(() => import('./components/Skills'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -44,6 +45,7 @@ function App() {
         <Hero />
         <Stats />
         <Timeline />
+        <Education />
         <Projects />
         <Skills />
         <Contact />
