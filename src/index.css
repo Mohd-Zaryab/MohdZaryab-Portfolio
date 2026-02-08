@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #050505;
+  --text-primary: #94A3B8;
+  --text-hero: #FFFFFF;
+  --accent: #2DD4BF;
+  --glass: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.1);
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --background: #F8FAFC;
+  --text-primary: #1E293B;
+  --text-hero: #0F172A;
+  --accent: #0D9488;
+  --glass: rgba(15, 23, 42, 0.03);
+  --border: rgba(15, 23, 42, 0.08);
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  transition: background-color 0.5s ease, color 0.5s ease;
+  @apply overflow-x-hidden m-0 p-0 selection:bg-neon-teal selection:text-background;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  cursor: none;
+}
+
+/* Grain Overlay */
+.grain-overlay {
+  position: fixed;
+  top: -150%;
+  left: -50%;
+  width: 300%;
+  height: 300%;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Custom Cursor */
+.cursor-ring {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(45, 212, 191, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.1s ease-out, border-color 0.2s ease, width 0.2s ease, height 0.2s ease;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-snap {
+  width: 60px;
+  height: 60px;
+  background: rgba(45, 212, 191, 0.2);
+  border-color: #2DD4BF;
+}
+
+/* Glassmorphism */
+.glass {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+}
+
+.glass-teal {
+  @apply bg-neon-teal/5 backdrop-blur-md border border-neon-teal/20;
+}
+
+/* Parallax Tilt */
+.tilt-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.tilt-inner {
+  transform: translateZ(20px);
+}
+
+@layer base {
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply uppercase tracking-tight;
+  }
+}
